@@ -1,0 +1,14 @@
+<h1>Timeline</h1>
+
+<input [(ngModel)]="content" placeholder="What's on your mind?" class="input">
+
+
+<button class="button is-success" (click)="createNote()" [disabled]="content?.length < 2 || content?.length > 200">
+  Add Note
+</button>
+<hr>
+<div *ngFor="let note of notes | async">
+  <note-detail [note]="note"></note-detail>
+</div>
+
+
